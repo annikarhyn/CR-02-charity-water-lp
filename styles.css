@@ -197,8 +197,12 @@ nav a:focus,
   line-height: 1.2;
 }
 
+/* 
+  The .highlight class adds a yellow underline using a background image.
+  The SVG path below is now straighter, so the underline is more visible and doesn't blend with text below.
+*/
 .highlight {
-  background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M2 5c10 3, 20 0, 30 3, 40 0, 50 4, 60 2, 70 6, 80 1, 90 4, 100 3" stroke="%23FFC907" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="10" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="8" x2="100%" y2="8" stroke="%23FFC907" stroke-width="2" stroke-linecap="round"/></svg>');
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 100% 10px;
@@ -223,4 +227,28 @@ nav a:focus,
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.12em;
-  text-transform: uppercase
+  text-transform: uppercase;
+}
+
+/* 
+  This class adds a white frame behind the image.
+  The frame is slightly bigger than the image and offset down and to the left.
+  The corners are now sharp (not rounded).
+*/
+.image-frame {
+  position: relative;
+  display: inline-block;
+  top: 16px;
+  left: -16px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 0; /* sharp corners */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08); /* optional: soft shadow */
+}
+
+.image-frame img {
+  display: block;
+  border-radius: 0; /* sharp corners */
+  max-width: 100%;
+  height: auto;
+}
