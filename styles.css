@@ -252,3 +252,77 @@ nav a:focus,
   max-width: 100%;
   height: auto;
 }
+
+/* 
+  This media query makes the layout adjust for tablets and phones.
+  When the screen is 800px wide or less, the main section stacks vertically,
+  and padding/font sizes are reduced for better fit.
+*/
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .main-section {
+    flex-direction: column;
+    padding: 24px 10px;
+  }
+
+  .text-content {
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .image-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-frame {
+    top: 8px;
+    left: -8px;
+    padding: 8px;
+    max-width: 100%;
+  }
+
+  .text-content h1 {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .btn-yellow.cta {
+    font-size: 14px;
+    padding: 10px 18px;
+    margin-top: 24px;
+  }
+}
+
+/* 
+  This media query is for very small screens (like phones).
+  It makes text and buttons even smaller and ensures everything fits.
+*/
+@media (max-width: 500px) {
+  .text-content h1 {
+    font-size: 18px;
+  }
+  .text-content p {
+    font-size: 13px;
+  }
+  .btn-yellow.cta {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+  .image-frame {
+    padding: 4px;
+    top: 4px;
+    left: -4px;
+  }
+}
