@@ -238,19 +238,22 @@ nav a:focus,
 .image-frame {
   position: relative;
   display: inline-block;
-  top: 16px;
-  left: -16px;
+  top: 16px;     /* move the frame down */
+  left: -16px;   /* move the frame to the left */
   background: #fff;
   padding: 14px;
   border-radius: 0; /* sharp corners */
   box-shadow: 0 4px 16px rgba(0,0,0,0.08); /* optional: soft shadow */
+  max-width: 506px;
+  width: 100%;
 }
 
-.image-frame img {
-  display: block;
-  border-radius: 0; /* sharp corners */
-  max-width: 100%;
-  height: auto;
+/* Remove the image offset so the image sits normally inside the frame */
+.image-frame .image-hover-container {
+  position: relative;
+  z-index: 1;
+  left: 0;
+  top: 0;
 }
 
 /* 
@@ -305,6 +308,62 @@ nav a:focus,
   background: rgba(255,255,255,0.1);
   padding: 4px 12px;
   border-radius: 4px;
+}
+
+/* Restore the hero image and frame to their original (smaller) size */
+.image-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 26px; /* much smaller */
+  width: 100%;
+}
+
+.image-frame {
+  max-width: 22px; /* much smaller */
+  width: 100%;
+  top: 16px;
+  left: -16px;
+  background: #fff;
+  padding: 6px; /* reduce padding for a tiny frame */
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Remove the frame and make the hero image 3 times smaller */
+.image-frame {
+  /* No frame styles needed, so we remove background, padding, border, etc. */
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: none;
+  width: auto;
+  top: 0;
+  left: 0;
+  position: static;
+  display: inline-block;
+}
+
+.image-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 26px; /* much smaller: 78px / 3 = 26px (if previous was 78px) */
+  width: 100%;
+}
+
+/* Make sure the image itself is also small */
+.image-frame img {
+  max-width: 26px;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  position: static;
+  top: 0;
+  left: 0;
 }
 
 /* 
@@ -379,4 +438,42 @@ nav a:focus,
     top: 4px;
     left: -4px;
   }
+}
+
+/* Make the hero image three times larger than before */
+.image-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 624px; /* 208px * 3 = 624px */
+  width: 100%;
+  /* Move the image down 100 pixels */
+  margin-top: 100px;
+}
+
+.image-frame {
+  /* No frame styles needed */
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: none;
+  width: auto;
+  top: 0;
+  left: 0;
+  position: static;
+  display: inline-block;
+}
+
+.image-frame img {
+  max-width: 624px; /* 208px * 3 = 624px */
+  height: auto;
+  display: block;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  position: static;
+  top: 0;
+  left: 0;
+}
 }
