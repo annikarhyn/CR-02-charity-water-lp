@@ -254,6 +254,60 @@ nav a:focus,
 }
 
 /* 
+  This class is for the image hover effect.
+  The overlay is hidden by default and appears when you hover over the image.
+*/
+.image-hover-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-hover-container img {
+  display: block;
+}
+
+/* The overlay covers the image and is centered */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.7); /* semi-transparent dark background */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.3s;
+  pointer-events: none; /* allows mouse events to pass through when hidden */
+  border-radius: 0; /* sharp corners */
+}
+
+/* Show the overlay on hover */
+.image-hover-container:hover .image-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Style for the location icon and text */
+.location-icon {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.location-text {
+  font-size: 16px;
+  color: #FFC907;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,0.1);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* 
   This media query makes the layout adjust for tablets and phones.
   When the screen is 800px wide or less, the main section stacks vertically,
   and padding/font sizes are reduced for better fit.

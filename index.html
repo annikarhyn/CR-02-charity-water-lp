@@ -63,10 +63,25 @@
     <div class="image-content">
       <!-- The image is wrapped in a frame for a white border effect -->
       <div class="image-frame">
-        <img
-          src="https://cdn2.dropmarkusercontent.com/52043/7d5b1cd3f04618d648509e97ec3296efea3306283c92d00b2ae71b307d190447/7836_Ethiopia_2019_CG-.jpg?Expires=1751754923&Signature=G4uScTOMc8GSxy936Ls5ZpX7v6-rrpr~lqSsE0rqT8qFEBgk-KFHuzq2TJVzuvxtj17Ldhe~kmP~tAZfp3ZAgsLTN1AqztDraKO2IBjnL4gRI6WsokLwVunq8i0~arf4JaONf6VG~Z1ok6-RAM7odSWqaTVKb9N15~AL0zEiToGbqtx3sEFhcrhrFjI3q-vKCS4nXeCQ6xqk3jjFslwj66ncZF1kXz9BiDGcN214uMRQik~qcEaiTmcHRuSfTrm~cEEU9biG04fJtVwPZKWI7K0fjTCnzKW3h0-3yxr8WUHjOLLmbDj6Il2FxXNlyOSY8NjiQj7M1bIIq~jyr4CK0g__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ"
-          alt="Woman collecting water from a spigot"
-        />
+        <!-- This container holds the image and the hover overlay -->
+        <div class="image-hover-container">
+          <img
+            src="https://cdn2.dropmarkusercontent.com/52043/7d5b1cd3f04618d648509e97ec3296efea3306283c92d00b2ae71b307d190447/7836_Ethiopia_2019_CG-.jpg?Expires=1751754923&Signature=G4uScTOMc8GSxy936Ls5ZpX7v6-rrpr~lqSsE0rqT8qFEBgk-KFHuzq2TJVzuvxtj17Ldhe~kmP~tAZfp3ZAgsLTN1AqztDraKO2IBjnL4gRI6WsokLwVunq8i0~arf4JaONf6VG~Z1ok6-RAM7odSWqaTVKb9N15~AL0zEiToGbqtx3sEFhcrhrFjI3q-vKCS4nXeCQ6xqk3jjFslwj66ncZF1kXz9BiDGcN214uMRQik~qcEaiTmcHRuSfTrm~cEEU9biG04fJtVwPZKWI7K0fjTCnzKW3h0-3yxr8WUHjOLLmbDj6Il2FxXNlyOSY8NjiQj7M1bIIq~jyr4CK0g__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ"
+            alt="Woman collecting water from a spigot"
+          />
+          <!-- This overlay appears when you hover over the image -->
+          <div class="image-overlay">
+            <!-- Simple location symbol using SVG -->
+            <span class="location-icon">
+              <!-- SVG for a location pin -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="8" r="3" stroke="#FFC907" stroke-width="2" fill="none"/>
+                <path d="M10 18C10 18 17 11.5 17 7.5C17 4.18629 13.866 2 10 2C6.13401 2 3 4.18629 3 7.5C3 11.5 10 18 10 18Z" stroke="#FFC907" stroke-width="2" fill="none"/>
+              </svg>
+            </span>
+            <span class="location-text">Ethiopia, 2019</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
